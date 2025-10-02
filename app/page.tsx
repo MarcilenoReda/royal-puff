@@ -40,7 +40,7 @@ export default function Home() {
                 <CategoryCard 
                   title="MANGO KIWI COLLECTION" 
                   subtitle="View Products"
-                  image="/images/magokiwi.jpg" 
+                  image="/images/mangokiwi.jpg" 
                   imagePosition="left"
                   isLarge={false}
                 />
@@ -65,24 +65,24 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <ProductCard 
-              name="VCT BOLD" 
+              name="TOBACCO BUTTER" 
               price="125L.E" 
-              image="/images/product1.png"
+              image="/images/Tobacco butter30.jpg"
             />
             <ProductCard 
-              name="VCT ICE" 
+              name="TOBACCO CAFÉ" 
               price="125L.E" 
-              image="/images/product2.png"
+              image="/images/tobaccocafe.jpg"
             />
             <ProductCard 
-              name="PINEAPPLE FREEZ" 
+              name="MANGO KIWI" 
               price="125L.E" 
-              image="/images/product3.png"
+              image="/images/mangokiwi.jpg"
             />
             <ProductCard 
-              name="BANANA FREEZ" 
+              name="TOBACCO BISCUITS" 
               price="125L.E" 
-              image="/images/product4.png"
+              image="/images/tobaccobis.jpg"
             />
           </div>
         </div>
