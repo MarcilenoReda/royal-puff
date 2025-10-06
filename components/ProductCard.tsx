@@ -1,52 +1,47 @@
-import { FaStar } from 'react-icons/fa'
-import Image from 'next/image'
+import Link from 'next/link'
 
 interface ProductCardProps {
+  id: number
   name: string
   price: string
   image: string
 }
 
-export default function ProductCard({ name, price, image }: ProductCardProps) {
+export default function ProductCard({ id, name, price, image }: ProductCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-lg transition-shadow duration-200 hover:shadow-lg bg-white border border-gray-200">
-      {/* Image Container with Light Overlay */}
-      <div className="relative h-72 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center p-6">
+    <div className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white transition-shadow duration-300 hover:shadow-xl">
+      {/* Image Container */}
+      <div className="relative w-full aspect-square overflow-hidden bg-white">
+        <div className="flex h-full w-full items-center justify-center p-4">
           {image ? (
-            <Image 
+            <img 
               src={image} 
               alt={name} 
-              width={250} 
-              height={288} 
-              className="object-contain h-full w-auto group-hover:scale-102 transition-transform duration-200"
+              className="h-full w-full object-cover"
+              loading="lazy"
             />
           ) : (
-            <div className="w-32 h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400">
+            <div className="flex h-64 w-32 items-center justify-center rounded-lg bg-gray-200 text-gray-400">
               No Image
             </div>
           )}
         </div>
+        
       </div>
       
       {/* Content */}
-      <div className="p-5 text-center bg-white">
-        <h4 className="font-bold text-lg mb-2 text-gray-900">{name}</h4>
-        
-        {/* Star Rating */}
-        <div className="flex justify-center space-x-1 mb-3">
-          {[...Array(5)].map((_, i) => (
-            <FaStar key={i} className="text-yellow-400 text-sm" />
-          ))}
-        </div>
+      <div className="p-5 text-center">
+        <h4 className="mb-3 text-lg font-bold text-gray-800 truncate">{name}</h4>
         
         {/* Price */}
-        <p className="text-lg font-semibold text-gray-800 mb-4">{price}</p>
+        <p className="mb-4 text-xl font-semibold text-gray-900">{price}</p>
         
         {/* Button */}
-        <button className="w-full bg-gray-900 text-white font-semibold py-2.5 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-150">
-          Add to Cart
-        </button>
+        <Link href={`/products/${id}`}>
+          <button className="w-full rounded-lg bg-gray-900 py-2.5 px-6 font-semibold text-white transition-colors duration-200 hover:bg-gray-800">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   )

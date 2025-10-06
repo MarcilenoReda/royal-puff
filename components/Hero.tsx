@@ -1,8 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import Link from 'next/link'
 
 const slides = [
   {
@@ -81,7 +81,9 @@ export default function Hero() {
               </p>
               <div className="flex flex-col items-center justify-center space-y-3">
                 <p className="text-xs md:text-sm">NICOTINE CONTENT WARNING APPLIES</p>
-                <button className="btn-primary text-sm md:text-base"> CLICK HERE </button>
+                <Link href="/products">
+                  <button className="btn-primary text-sm md:text-base"> SHOP NOW </button>
+                </Link>
               </div>
             </div>
           </div>
